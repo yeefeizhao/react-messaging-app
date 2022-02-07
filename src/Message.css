@@ -1,0 +1,25 @@
+.messagesent {
+    color: #bba1eb;
+    text-align: right;
+    margin-right: 3px;
+}
+
+.messagereceived {
+    color: #a7d8ff;
+    text-align: left;
+    margin-left: 3px;
+}
+
+.message_sender {
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.message_msg {
+    font-size: 1rem;
+}
+
+.message_box {
+    margin-top: 1rem;
+}
+
