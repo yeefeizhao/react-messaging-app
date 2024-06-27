@@ -1,25 +1,39 @@
-.messagesent {
-    color: #bba1eb;
+.sent {
+    color: #E4E6EB;
+    float: right;
     text-align: right;
-    margin-right: 3px;
 }
 
-.messagereceived {
-    color: #a7d8ff;
-    text-align: left;
-    margin-left: 3px;
+.received {
+    color: #E4E6EB;
+    float: left;
 }
 
-.message_sender {
-    font-size: 0.8rem;
-    color: grey;
+.message {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #3A3B3C;
+    width: 50%;
+    clear: both;
 }
 
-.message_msg {
-    font-size: 1rem;
+.author {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #BB86FC;
 }
 
-.message_box {
-    margin-top: 1rem;
+.message .content {
+    margin: 0;
+}
+
+.author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.content {
+    margin: 0;
 }
 

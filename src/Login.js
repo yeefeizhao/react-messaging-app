@@ -17,7 +17,7 @@ function Login() {
     return (
         <div className='login'>
             <div className='container'>
-                <h2 className='login_title'>&#123; Log In &#125;</h2>
+                <h2 className='login-title'>&#123; Log In &#125;</h2>
                 <button className='button-28' onClick={signInWithGoogle}>Log In With Google</button>
             </div>
         </div>

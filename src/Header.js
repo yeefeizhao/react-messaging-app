@@ -10,19 +10,19 @@ function Header() {
     return (
         <div className='header'>
             <div className='nav'>
-                <h2 className='header_title'>&#123; Express Chat &#125;</h2>
-                <div className='header_text'>
-                    <Link className='nav_link' to='/'>
+                <h2 className='header-title'>&#123; Express Chat &#125;</h2>
+                <div className='header-text'>
+                    <Link className='nav-link' to='/'>
                         <p>
                             Home
                         </p>
                     </Link>
-                    <Link className='nav_link' to={user ? '/chat' : '/login'}>
+                    <Link className='nav-link' to={user ? '/chat' : '/login'}>
                         <p>
                             Chat
                         </p>
                     </Link>
-                    <Link className='nav_link' to={!user && '/login'} onClick={signOut}>
+                    <Link className='nav-link' to={!user && '/login'} onClick={signOut}>
                         <p>
                             {user ? 'Sign Out' : 'Login'}
                         </p>

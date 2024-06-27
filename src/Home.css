@@ -1,34 +1,58 @@
 .home {
     height: 90vh;
+    background-color: #18191A;
+    margin: 0;
+    padding: 0;
+    color: #E4E6EB;
 }
 
-.home_container {
+.home-container {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
-.home_title {
+.home-title {
     display: flex;
     font-size: 3rem;
     margin-bottom: 5vh;
+    color: #E4E6EB;
 }
 
-.home_desc {
+.home-desc {
     display: flex;
     font-size: 1rem;
+    margin-bottom: 5vh;
+    color: #E4E6EB;
 }
 
-@media screen and (max-width: 770px) {
-    .home_title {
+@media screen and (max-width: 768px) {
+    .home-title {
         font-size: 1.5rem;
         margin-bottom: 3vh;
     }
     
-    .home_desc {
+    .home-desc {
         font-size: 1rem;
     }
 }
 
+.button-home:hover {
+    background-color: #6A1B9A;
+}
+
+.button-home {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #7B1FA2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    min-width: 10vw;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
