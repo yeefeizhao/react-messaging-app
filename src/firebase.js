@@ -5,13 +5,7 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA18nRbag6vfqaMdHVpsSsLSD9QzaZu95Q",
-    authDomain: "expchats.firebaseapp.com",
-    projectId: "expchats",
-    storageBucket: "expchats.appspot.com",
-    messagingSenderId: "700603528702",
-    appId: "1:700603528702:web:f02b695324facbf1f37caf",
-    measurementId: "G-7LGZK4N73G",
+    
 };
 
 const app = firebase.initializeApp(firebaseConfig);
