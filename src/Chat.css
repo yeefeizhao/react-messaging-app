@@ -1,6 +1,7 @@
 .chat {
     display: flex;
-    height: 100vh;
+    flex-direction: row;
+    height: 90vh;
     background-color: #18191a;
     margin: 0;
     padding: 0;
@@ -14,10 +15,11 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
+    height: 90vh;
 }
 
 .room-list {
-    overflow-y: auto;
+    overflow-y: scroll;
     margin-top: 20px;
 }
 
@@ -54,16 +56,21 @@
 }
 
 .chat-container {
-    flex: 1;
+    width: calc(85% - 40px);
     display: flex;
     flex-direction: column;
     background-color: #242526;
+    height: 90vh;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 .room-header {
     padding: 20px;
     background-color: #323739;
     border-bottom: 1px solid #3a3b3c;
+    height: 5vh;
 }
 
 .room-header h2 {
@@ -72,12 +79,11 @@
 }
 
 .messages {
-    flex: 1;
     padding: 20px;
     overflow-y: scroll;
     border-bottom: 1px solid #3a3b3c;
     flex-direction: column;
-    margin-bottom: 15vh;
+    height: 88vh;    
 }
 
 .chat-form {
@@ -86,9 +92,8 @@
     padding: 10px;
     border-top: 1px solid #323739;
     background-color: #242526;
-    position: fixed;
-    bottom: 0;
-    width: calc(100% - 15vw);
+    height: 7vh;
+    width: 80vw;
 }
 
 .input-text {
@@ -234,7 +239,7 @@
 }
 
 /* Adjustments for smaller screens (e.g., phones) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 428px) {
     .chat {
         display: flex;
         flex-direction: column;

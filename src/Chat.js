@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { db } from "./firebase";
 import Message from "./Message";
 import firebase from "firebase/compat/app";
@@ -19,6 +19,8 @@ function Chat() {
 
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [roomToDelete, setRoomToDelete] = useState(null);
+
+    const endOfMessages = useRef(null);
 
     useEffect(() => {
         const fetchRooms = async () => {
@@ -58,6 +60,13 @@ function Chat() {
             console.log("roomed changed to: ", currentRoom);
         }
     }, [currentRoom, lastRoomId]);
+
+    useEffect(() => {
+        if (endOfMessages.current) {
+            endOfMessages.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [messages]);
+
     const toggleCreateRoom = () => {
         setShowCreateRoom(!showCreateRoom);
         setShowJoinRoom(false);
@@ -202,6 +211,32 @@ function Chat() {
         }
     };
 
+    const mapMessages = messages.map((msg, index) => {
+        if (index === messages.length - 1) {
+            return (
+                <div ref={endOfMessages}>
+                    <Message
+                        key={msg.id}
+                        uid={msg.user}
+                        message={msg.message}
+                        name={msg.author}
+                    />
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <Message
+                        key={msg.id}
+                        uid={msg.user}
+                        message={msg.message}
+                        name={msg.author}
+                    />
+                </div>
+            );
+        }
+    });
+
     return (
         <div className="chat">
             <div className="sidebar">
@@ -302,16 +337,7 @@ function Chat() {
                     <div className="room-header">
                         <h2>{currentRoom.id}</h2>
                     </div>
-                    <div className="messages">
-                        {messages.map((msg) => (
-                            <Message
-                                key={msg.id}
-                                uid={msg.user}
-                                message={msg.message}
-                                name={msg.author}
-                            />
-                        ))}
-                    </div>
+                    <div className="messages">{mapMessages}</div>
                     <div className="chat-form">
                         <form onSubmit={sendMessage}>
                             <input
